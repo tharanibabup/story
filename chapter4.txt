@@ -1,0 +1,434 @@
+Last login: Mon Feb 24 08:10:55 on console
+RBS@TharanibhansMBP ~ % cd /Users/RBS/Desktop/Tharanibabu/udmy-IOS\ APP\ DEVELOPMENT\ BOOTCAMP/GitLearning/Project
+RBS@TharanibhansMBP Project % git log
+fatal: your current branch 'master' does not have any commits yet
+RBS@TharanibhansMBP Project % cd ../
+RBS@TharanibhansMBP GitLearning % git log
+commit e9a3a01761b7e937ae4bb584aadb0108214340ac (HEAD -> master, origin/master)
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:41:38 2020 +0000
+
+    Added two more files
+
+commit 630d1cff21b8e063cba2b2109dc04f6f87a55166
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:37:26 2020 +0000
+
+    Initial File with content
+RBS@TharanibhansMBP GitLearning % cd Project
+RBS@TharanibhansMBP Project % ls -lrt
+total 24
+-rw-r--r--@ 1 RBS  staff  41 17 Feb 21:34 firstFile.txt
+-rw-r--r--@ 1 RBS  staff  19 17 Feb 21:39 secondFile.txt
+-rw-r--r--@ 1 RBS  staff  19 17 Feb 21:48 thirdFile.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:03 file1.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 file2.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 file3.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 file4.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 secrets.txt
+RBS@TharanibhansMBP Project % git log
+fatal: your current branch 'master' does not have any commits yet
+RBS@TharanibhansMBP Project % git commit -m "This is my first commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+	.gitignore
+	file1.txt
+	file2.txt
+	file3.txt
+	file4.txt
+	firstFile.txt
+	secondFile.txt
+	secrets.txt
+	thirdFile.txt
+
+nothing added to commit but untracked files present
+RBS@TharanibhansMBP Project % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+	file1.txt
+	file2.txt
+	file3.txt
+	file4.txt
+	firstFile.txt
+	secondFile.txt
+	secrets.txt
+	thirdFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+RBS@TharanibhansMBP Project % git commit -m "This is my first commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+	.gitignore
+	file1.txt
+	file2.txt
+	file3.txt
+	file4.txt
+	firstFile.txt
+	secondFile.txt
+	secrets.txt
+	thirdFile.txt
+
+nothing added to commit but untracked files present
+RBS@TharanibhansMBP Project % git add *.txt
+RBS@TharanibhansMBP Project % git commit -m "Initial commit"
+[master (root-commit) 25d46c1] Initial commit
+ 8 files changed, 3 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+ create mode 100644 file4.txt
+ create mode 100644 firstFile.txt
+ create mode 100644 secondFile.txt
+ create mode 100644 secrets.txt
+ create mode 100644 thirdFile.txt
+RBS@TharanibhansMBP Project % git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+RBS@TharanibhansMBP Project % git push 
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+RBS@TharanibhansMBP Project % git remote add mystory https://github.com/tharanibabup/story.git
+RBS@TharanibhansMBP Project % git push mystory
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream mystory master
+
+RBS@TharanibhansMBP Project % git push --set-upstream mystory master
+To https://github.com/tharanibabup/story.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/tharanibabup/story.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+RBS@TharanibhansMBP Project % git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=mystory/<branch> master
+
+RBS@TharanibhansMBP Project % git pull mystory https://github.com/tharanibabup/story.git
+fatal: invalid refspec 'https://github.com/tharanibabup/story.git'
+RBS@TharanibhansMBP Project % git pull mystory master
+warning: no common commits
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+From https://github.com/tharanibabup/story
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> mystory/master
+fatal: refusing to merge unrelated histories
+RBS@TharanibhansMBP Project % git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+RBS@TharanibhansMBP Project % git push mystory                      
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream mystory master
+
+RBS@TharanibhansMBP Project % git push --set-upstream mystory master
+To https://github.com/tharanibabup/story.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/tharanibabup/story.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+RBS@TharanibhansMBP Project % git remote add origin https://github.com/tharanibabup/story.git
+RBS@TharanibhansMBP Project % git remote -v
+mystory	https://github.com/tharanibabup/story.git (fetch)
+mystory	https://github.com/tharanibabup/story.git (push)
+origin	https://github.com/tharanibabup/story.git (fetch)
+origin	https://github.com/tharanibabup/story.git (push)
+RBS@TharanibhansMBP Project %  git push origin master
+To https://github.com/tharanibabup/story.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/tharanibabup/story.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+RBS@TharanibhansMBP Project % pw
+zsh: command not found: pw
+RBS@TharanibhansMBP Project % pwd
+/Users/RBS/Desktop/Tharanibabu/udmy-IOS APP DEVELOPMENT BOOTCAMP/GitLearning/Project
+RBS@TharanibhansMBP Project % git init
+Reinitialized existing Git repository in /Users/RBS/Desktop/Tharanibabu/udmy-IOS APP DEVELOPMENT BOOTCAMP/GitLearning/Project/.git/
+RBS@TharanibhansMBP Project % git ls
+git: 'ls' is not a git command. See 'git --help'.
+
+The most similar command is
+	log
+RBS@TharanibhansMBP Project % rm -rf .git
+RBS@TharanibhansMBP Project % ls -lrt
+total 24
+-rw-r--r--@ 1 RBS  staff  41 17 Feb 21:34 firstFile.txt
+-rw-r--r--@ 1 RBS  staff  19 17 Feb 21:39 secondFile.txt
+-rw-r--r--@ 1 RBS  staff  19 17 Feb 21:48 thirdFile.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:03 file1.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 file2.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 file3.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 file4.txt
+-rw-r--r--  1 RBS  staff   0 22 Feb 20:04 secrets.txt
+RBS@TharanibhansMBP Project % ls -a
+.		.gitignore	file3.txt	secondFile.txt
+..		file1.txt	file4.txt	secrets.txt
+.DS_Store	file2.txt	firstFile.txt	thirdFile.txt
+RBS@TharanibhansMBP Project % git init
+Initialized empty Git repository in /Users/RBS/Desktop/Tharanibabu/udmy-IOS APP DEVELOPMENT BOOTCAMP/GitLearning/Project/.git/
+RBS@TharanibhansMBP Project % git add .
+RBS@TharanibhansMBP Project % git commit -m "First commit"**
+zsh: no matches found: First commit**
+RBS@TharanibhansMBP Project % git commit -m "First commit"  
+[master (root-commit) 060d396] First commit
+ 9 files changed, 3 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+ create mode 100644 file4.txt
+ create mode 100644 firstFile.txt
+ create mode 100644 secondFile.txt
+ create mode 100644 secrets.txt
+ create mode 100644 thirdFile.txt
+RBS@TharanibhansMBP Project % git status
+On branch master
+nothing to commit, working tree clean
+RBS@TharanibhansMBP Project % git status
+On branch master
+nothing to commit, working tree clean
+RBS@TharanibhansMBP Project % git remote add origin https://github.com/tharanibabup/story.git
+RBS@TharanibhansMBP Project % git remote -v
+origin	https://github.com/tharanibabup/story.git (fetch)
+origin	https://github.com/tharanibabup/story.git (push)
+RBS@TharanibhansMBP Project % git pull 
+warning: no common commits
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+From https://github.com/tharanibabup/story
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+RBS@TharanibhansMBP Project % git pull git https://github.com/tharanibabup/story.git
+fatal: invalid refspec 'https://github.com/tharanibabup/story.git'
+RBS@TharanibhansMBP Project % git pull git https://github.com/tharanibabup/story master
+fatal: invalid refspec 'https://github.com/tharanibabup/story'
+RBS@TharanibhansMBP Project % git push origin master
+To https://github.com/tharanibabup/story.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/tharanibabup/story.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+RBS@TharanibhansMBP Project % git push --help
+RBS@TharanibhansMBP Project % git pull 
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+RBS@TharanibhansMBP Project % git branch --set-upstream-to=origin/<branch> master
+zsh: no such file or directory: branch
+RBS@TharanibhansMBP Project % git pull https://github.com/tharanibabup/story.git master
+From https://github.com/tharanibabup/story
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+RBS@TharanibhansMBP Project % git push -u origin master
+To https://github.com/tharanibabup/story.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/tharanibabup/story.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+RBS@TharanibhansMBP Project % git remote add origin https://github.com/tharanibabup/story.git
+fatal: remote origin already exists.
+RBS@TharanibhansMBP Project % git push -u origin master
+To https://github.com/tharanibabup/story.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/tharanibabup/story.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+RBS@TharanibhansMBP Project % git reset --hard origin/master
+HEAD is now at e9a3a01 Added two more files
+RBS@TharanibhansMBP Project % git push -u origin master     
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+RBS@TharanibhansMBP Project % git push
+Everything up-to-date
+RBS@TharanibhansMBP Project % git pull
+Already up to date.
+RBS@TharanibhansMBP Project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+RBS@TharanibhansMBP Project % git log
+commit e9a3a01761b7e937ae4bb584aadb0108214340ac (HEAD -> master, origin/master)
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:41:38 2020 +0000
+
+    Added two more files
+
+commit 630d1cff21b8e063cba2b2109dc04f6f87a55166
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:37:26 2020 +0000
+
+    Initial File with content
+RBS@TharanibhansMBP Project % pwd
+/Users/RBS/Desktop/Tharanibabu/udmy-IOS APP DEVELOPMENT BOOTCAMP/GitLearning/Project
+RBS@TharanibhansMBP Project % ls -art
+firstFile.txt	secondFile.txt	thirdFile.txt	..		.DS_Store	.		.git
+RBS@TharanibhansMBP Project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	4thFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+RBS@TharanibhansMBP Project % git add .
+RBS@TharanibhansMBP Project % git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   4thFile.txt
+
+RBS@TharanibhansMBP Project % git commit -m "Second commit"
+[master 364be6b] Second commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4thFile.txt
+RBS@TharanibhansMBP Project % git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 238 bytes | 238.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/tharanibabup/story.git
+   e9a3a01..364be6b  master -> master
+RBS@TharanibhansMBP Project % git log
+commit 364be6b252cb6f808257f35e42b6824857a5203c (HEAD -> master, origin/master)
+Author: Tharanibabu Padmanabhan <tharanibabu@gmail.com>
+Date:   Mon Feb 24 22:04:45 2020 +0000
+
+    Second commit
+
+commit e9a3a01761b7e937ae4bb584aadb0108214340ac
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:41:38 2020 +0000
+
+    Added two more files
+
+commit 630d1cff21b8e063cba2b2109dc04f6f87a55166
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:37:26 2020 +0000
+
+    Initial File with content
+RBS@TharanibhansMBP Project % git branch alien-plot
+RBS@TharanibhansMBP Project % git branch
+  alien-plot
+* master
+RBS@TharanibhansMBP Project % git checkout alien-plot
+Switched to branch 'alien-plot'
+RBS@TharanibhansMBP Project % git add .
+RBS@TharanibhansMBP Project % git commit -m "Modified files for alien-theam"
+[alien-plot d46cb4e] Modified files for alien-theam
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+RBS@TharanibhansMBP Project % git log
+commit d46cb4e0dc5b2b16675120bad11810a209f03593 (HEAD -> alien-plot)
+Author: Tharanibabu Padmanabhan <tharanibabu@gmail.com>
+Date:   Mon Feb 24 22:07:34 2020 +0000
+
+    Modified files for alien-theam
+
+commit 364be6b252cb6f808257f35e42b6824857a5203c (origin/master, master)
+Author: Tharanibabu Padmanabhan <tharanibabu@gmail.com>
+Date:   Mon Feb 24 22:04:45 2020 +0000
+
+    Second commit
+
+commit e9a3a01761b7e937ae4bb584aadb0108214340ac
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:41:38 2020 +0000
+
+    Added two more files
+
+commit 630d1cff21b8e063cba2b2109dc04f6f87a55166
+Author: Tharanibabu Padmanabhan <tharanibabu.p@rbs.co.uk>
+Date:   Mon Feb 17 21:37:26 2020 +0000
+
+    Initial File with content
+RBS@TharanibhansMBP Project % git branch
+* alien-plot
+  master
+RBS@TharanibhansMBP Project % git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+RBS@TharanibhansMBP Project % touch chapter4.txt 
+RBS@TharanibhansMBP Project % open chapter4.txt
+RBS@TharanibhansMBP Project % 
